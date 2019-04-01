@@ -8,8 +8,7 @@ $('document').ready(function() {
         var selectedTeam = nhlTeams[selected];
         //variable for storing desired stat
         var selectedTwo = $('#stat-select').children('option:selected').val();
-        var selectedStat = selectedTeam.teamsStats[0].splits[0].stat[selectedTwo];
-
+        var selectedStat = selectedTeam.teamStats[0].splits[0].stat[selectedTwo];
 
         //update selected team
         $('#team-select').change(function() { 
@@ -22,12 +21,17 @@ $('document').ready(function() {
     
 
         //populate select options from data
-        /* we're close i can fee it
-        function populate() {
-            d3.select("#team-select").append("option")
-                .text()
-                .attr('value')
-        }*/
+        
+        d3.selectAll("#team-select")
+            .data(nhlTeams)
+            .enter()
+            .append("option")
+            .text(function(d) {
+                return d.name;
+            })
+            .attr('value', function(d) {
+                return d;//fix later
+            });
     /*
     function getStat(nhlTeams, stat) {
 
