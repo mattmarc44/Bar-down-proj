@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Matt Titmuss">
+    <title>Bar Down Data</title>
+
+
+    <!--styling-->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!--d3-->
+    <script type="text/javascript" src="./assets/js/d3.min.js"></script>
+    <script type="text/javascript" src="./assets/js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="./assets/js/dc.js"></script>
+    <script type="text/javascript" src="./assets/js/queue.min.js"></script>
+    <script type="text/javascript" src="./assets/js/graphMaker.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>nhl stats</h1>
+        <form>
+            <select name="teams" id="team-select">
+                <option value="0">New Jersey</option>
+                <option value="1">New York Islanders</option>
+                <option value="2">New York Rangers</option>
+                <option value="3">Philadelphia Flyers</option>
+            </select>
+
+            <select name="stats" id="stat-select">
+                <option value="faceoff">faceoffs</option>
+                <option value="power">powerplay</option>
+                <option value="pen">penalty kill</option>
+                <option value="winslo">wins/losses</option>
+            </select>
+        </form>
+        <div id="draw-here"></div>
+    </main>
+</body>
+
+</html>
