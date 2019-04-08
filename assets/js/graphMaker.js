@@ -21,11 +21,11 @@ $('document').ready(function() {
     
 
         //populate select options from data
-        
-        d3.selectAll("#team-select")
+
+        d3.selectAll('#team-select')
             .data(nhlTeams)
             .enter()
-            .append("option")
+            .append('option')
             .text(function(d) {
                 return d.name;
             })
