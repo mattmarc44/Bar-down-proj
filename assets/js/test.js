@@ -36,6 +36,8 @@ $('#draw').empty();
     dataSet.push(data.shotsPerGame)
     dataSet.push(data.goalsPerGame);
 
+    var colWidth = w / dataSet.length;
+
     var svg = d3.select('#draw')
                 .append('svg')
                 .attr('height', h)
@@ -46,7 +48,7 @@ $('#draw').empty();
         .enter()
         .append('rect')
         .attr('x', function(d, i) {
-            return i * (w / dataSet.length);
+            return i * colWidth;
         })
         .attr('y', function(d) {
             return h - d;
@@ -54,7 +56,23 @@ $('#draw').empty();
         .attr('height', function(d) {
             return d;
         })
-        .attr('width', w / dataSet.length - barPadding)
+        .attr('width', colWidth - barPadding);
+
+    svg.selectAll('text')
+        .data(dataSet)
+        .enter()
+        .append('text')
+        .text(function(d) {
+            return d;
+        })
+        .attr('text-anchor', 'middle')
+        .attr('x', function(d, i) {
+            return i * colWidth + (colWidth - 1) / 2;
+        })
+        .attr('y', function(d) {
+            return h - d - 14;
+        })
+        .attr('font-size', '20px');
 }
 
 function writeToDocument() {
