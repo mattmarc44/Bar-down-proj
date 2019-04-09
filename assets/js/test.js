@@ -24,12 +24,48 @@ use a variable to store the path to teamstats.
 attach targeted stat to the end to access that data.
 sommehow make that a chart.
 */
+
+function makeChart(data) {
+$('#draw').empty();
+
+    var h = 500;    
+    var w = 300;
+    var barPadding = 1;
+
+    var dataSet = [];
+    dataSet.push(data.shotsPerGame)
+    dataSet.push(data.goalsPerGame);
+
+    var svg = d3.select('#draw')
+                .append('svg')
+                .attr('height', h)
+                .attr('width', w)
+            
+    svg.selectAll('rect')
+        .data(dataSet)
+        .enter()
+        .append('rect')
+        .attr('x', function(d, i) {
+            return i * (w / dataSet.length);
+        })
+        .attr('y', function(d) {
+            return h - d;
+        })
+        .attr('height', function(d) {
+            return d;
+        })
+        .attr('width', w / dataSet.length - barPadding)
+}
+
 function writeToDocument() {
     getData(function (data) {
         var teamNo = document.getElementById('teams').value;
         var statType = document.getElementById('stat-select').value;
-        data = data.teams[teamNo].teamStats[0].splits[0].stat[statType]; //var targetdata = teamStats[0].splits[0].stat;
+        data = data.teams[teamNo].teamStats[0].splits[0].stat;
             //console.log(teamNo);
-            document.getElementById('data').innerHTML = data; //`<p>${data[type]}</p> + <p>${data[typeTwo]}</p>`
+            document.getElementById('data').innerHTML = data[statType]; //`<p>${data[type]}</p> + <p>${data[typeTwo]}</p>`
+            makeChart(data, teamNo);
     });
 }
+
+writeToDocument();
