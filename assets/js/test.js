@@ -36,6 +36,10 @@ $('#draw').empty();
     dataSet.push(data.shotsPerGame)
     dataSet.push(data.goalsPerGame);
 
+    var scale = d3.scale.linear()
+                        .domain([0, d3.max(dataSet)])
+                        .range([0, h]);
+
     var colWidth = w / dataSet.length;
 
     var svg = d3.select('#draw')
@@ -51,10 +55,10 @@ $('#draw').empty();
             return i * colWidth;
         })
         .attr('y', function(d) {
-            return h - d;
+            return h - scale(d);
         })
         .attr('height', function(d) {
-            return d;
+            return scale(d);
         })
         .attr('width', colWidth - barPadding);
 
@@ -70,9 +74,10 @@ $('#draw').empty();
             return i * colWidth + (colWidth - 1) / 2;
         })
         .attr('y', function(d) {
-            return h - d - 14;
+            return h - scale(d) + 14;
         })
-        .attr('font-size', '20px');
+        .attr('font-size', '20px')
+        .attr('fill', 'white');
 }
 
 function writeToDocument() {

@@ -18,10 +18,11 @@ $('document').ready(function() {
         $('#stat-select').change(function() { 
             selectedTwo = $(this).children('option:selected').val();
         });
-    
+        
+        
 
         //populate select options from data
-
+/* not working
         d3.selectAll('#team-select')
             .data(nhlTeams)
             .enter()
@@ -31,12 +32,7 @@ $('document').ready(function() {
             })
             .attr('value', function(d) {
                 return d;//fix later
-            });
-    /*
-    function getStat(nhlTeams, stat) {
-
-    }
-*/
+            });*/
     });
     
 });
