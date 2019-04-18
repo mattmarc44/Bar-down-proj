@@ -33,8 +33,10 @@ $('#draw').empty();
     var barPadding = 1;
 
     var dataSet = [];
-    dataSet.push(data.shotsPerGame)
+    dataSet.push(data.shotsPerGame);
     dataSet.push(data.goalsPerGame);
+    dataSet.push(data.shootingPctg);
+    dataSet.push(data.ptPctg);
 
     var scale = d3.scale.linear()
                         .domain([0, d3.max(dataSet)])

@@ -20,29 +20,33 @@
     <script type="text/javascript" src="./assets/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="./assets/js/dc.js"></script>
     <script type="text/javascript" src="./assets/js/queue.min.js"></script>
-    <script type="text/javascript" src="./assets/js/test.js"></script>
 </head>
 
 <body>
     <main>
         <h1>nhl stats</h1>
         <form>
-            <select name="teams" id="team-select">
+            <select name="teams" id="teamsOne">
                 <option value="0">New Jersey</option>
                 <option value="1">New York Islanders</option>
                 <option value="2">New York Rangers</option>
                 <option value="3">Philadelphia Flyers</option>
             </select>
-
-            <select name="stats" id="stat-select">
-                <option value="faceOffsWon">faceoffs</option>
-                <option value="power">powerplay</option>
-                <option value="pen">penalty kill</option>
-                <option value="winslo">wins/losses</option>
+            <select name="teamsTwo" id="teamsTwo">
+                <option value="0">New Jersey</option>
+                <option value="1">New York Islanders</option>
+                <option value="2">New York Rangers</option>
+                <option value="3">Philadelphia Flyers</option>
             </select>
         </form>
-        <div id="dropdownOne"></div>
+
+        <div id="graphOne">
+        </div>
+        <div id="graphTwo">
+        </div>
     </main>
+    <script type="text/javascript" src="./assets/js/groupingData.js"></script>
+
 </body>
 
 </html>
