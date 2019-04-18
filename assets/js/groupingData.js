@@ -23,11 +23,13 @@ function getData(cb) {
 
 //this is our object constructor which we'll push to our groupedData array later
 function teamObjectMaker(data, i) {
-    this.teamName = data.teams[i].name,
-        this.shots = data.teams[i].teamStats[0].splits[0].stat.shotsPerGame,
-        this.goals = data.teams[i].teamStats[0].splits[0].stat.goalsPerGame,
-        this.pointPctg = data.teams[i].teamStats[0].splits[0].stat.ptPctg,
-        this.shootingPctg = data.teams[i].teamStats[0].splits[0].stat.shootingPctg
+    response = {};
+    response['teamName'] = data.teams[i].name;
+    response['shots'] = data.teams[i].teamStats[0].splits[0].stat.shotsPerGame;
+    response['goals'] = data.teams[i].teamStats[0].splits[0].stat.goalsPerGame;
+    response['pointPctg'] = data.teams[i].teamStats[0].splits[0].stat.ptPctg;
+    response['shootingPctg'] = data.teams[i].teamStats[0].splits[0].stat.shootingPctg;
+    return response;
 }
 
 
@@ -45,46 +47,48 @@ function makeDataSet(data) {
 function writeDoc() {
     getData(function (data) {
         makeDataSet(data);
+        console.log(groupedData);
+        makeGraph();
     });
 }
 
 writeDoc();
 
 console.log(groupedData);
-console.log(groupedData[0]);
+
 
 //time to make a graph
-/*
-var ndx = crossfilter(groupedData);
+function makeGraph() {
+    var ndx = crossfilter(groupedData);
 
-var name_dim = ndx.dimension(dc.pluck('teamName'));
-var total_goals = name_dim.group().reduceSum(dc.pluck('goals'));
+    var name_dim = ndx.dimension(dc.pluck('teamName'));
+    var total_goals = name_dim.group().reduceSum(dc.pluck('goals'));
 
-dc.barChart('#graphOne')
-    .width(900)
-    .height(400)
-    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
-    .dimension(name_dim)
-    .group(total_goals)
-    .transitionDuration(600)
-    .x(d3.scale.ordinal())
-    .xUnits(dc.units.ordinal)
-    .xAxisLabel('team')
-    .yAxis().ticks(6);
+    dc.barChart('#graphOne')
+        .width(900)
+        .height(400)
+        .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+        .dimension(name_dim)
+        .group(total_goals)
+        .transitionDuration(600)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .xAxisLabel('team')
+        .yAxis().ticks(6);
 
-var total_shots = name_dim.group().reduceSum(dc.pluck('shots'));
+    var total_shots = name_dim.group().reduceSum(dc.pluck('shots'));
 
-dc.barChart('#graphTwo')
-    .width(900)
-    .height(400)
-    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
-    .dimension(name_dim)
-    .group(total_shots)
-    .transitionDuration(600)
-    .x(d3.scale.ordinal())
-    .xUnits(dc.units.ordinal)
-    .xAxisLabel('team')
-    .yAxis().ticks(6);
+    dc.barChart('#graphTwo')
+        .width(900)
+        .height(400)
+        .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+        .dimension(name_dim)
+        .group(total_shots)
+        .transitionDuration(600)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .xAxisLabel('team')
+        .yAxis().ticks(6);
 
-dc.renderAll();
-*/
+    dc.renderAll();
+}
