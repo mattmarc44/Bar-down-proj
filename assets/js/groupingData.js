@@ -27,8 +27,8 @@ function teamObjectMaker(data, i) {
     response['teamName'] = data.teams[i].name;
     response['shots'] = data.teams[i].teamStats[0].splits[0].stat.shotsPerGame;
     response['goals'] = data.teams[i].teamStats[0].splits[0].stat.goalsPerGame;
-    response['ptPctg'] = data.teams[i].teamStats[0].splits[0].stat.ptPctg;
-    response['shootingPctg'] = data.teams[i].teamStats[0].splits[0].stat.shootingPctg;
+    response['point Pctg'] = data.teams[i].teamStats[0].splits[0].stat.ptPctg;
+    response['shooting Pctg'] = data.teams[i].teamStats[0].splits[0].stat.shootingPctg;
     return response;
 }
 
@@ -71,13 +71,14 @@ function makeGraph() {
     dc.barChart('#graphOne')
         .width(900)
         .height(400)
-        .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+        .margins({ top: 10, right: 50, bottom: 90, left: 50 })
         .dimension(name_dim)
         .group(total_goals)
         .transitionDuration(600)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel('team')
+        .yAxisLabel(statOne)
         .yAxis().ticks(6);
 
     var total_shots = name_dim.group().reduceSum(dc.pluck(statTwo));
@@ -85,13 +86,14 @@ function makeGraph() {
     dc.barChart('#graphTwo')
         .width(900)
         .height(400)
-        .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+        .margins({ top: 10, right: 50, bottom: 90, left: 50 })
         .dimension(name_dim)
         .group(total_shots)
         .transitionDuration(600)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel('team')
+        .yAxisLabel(statTwo)
         .yAxis().ticks(6);
 
     dc.renderAll();

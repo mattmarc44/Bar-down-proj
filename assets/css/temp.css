@@ -1,0 +1,6 @@
+/*all styles to be moved to sass after chart production*/
+
+.dc-chart .box text, .dc-chart g.axis.x text{
+    transform: rotate(45deg);
+    text-anchor: start !important;
+}
