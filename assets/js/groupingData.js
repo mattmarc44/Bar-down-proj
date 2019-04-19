@@ -27,7 +27,7 @@ function teamObjectMaker(data, i) {
     response['teamName'] = data.teams[i].name;
     response['shots'] = data.teams[i].teamStats[0].splits[0].stat.shotsPerGame;
     response['goals'] = data.teams[i].teamStats[0].splits[0].stat.goalsPerGame;
-    response['pointPctg'] = data.teams[i].teamStats[0].splits[0].stat.ptPctg;
+    response['ptPctg'] = data.teams[i].teamStats[0].splits[0].stat.ptPctg;
     response['shootingPctg'] = data.teams[i].teamStats[0].splits[0].stat.shootingPctg;
     return response;
 }
@@ -59,10 +59,14 @@ console.log(groupedData);
 
 //time to make a graph
 function makeGraph() {
+    //get stats to compare
+    var statOne = document.getElementById('statsOne').value;
+    var statTwo = document.getElementById('statsTwo').value;
+
     var ndx = crossfilter(groupedData);
 
     var name_dim = ndx.dimension(dc.pluck('teamName'));
-    var total_goals = name_dim.group().reduceSum(dc.pluck('goals'));
+    var total_goals = name_dim.group().reduceSum(dc.pluck(statOne));
 
     dc.barChart('#graphOne')
         .width(900)
@@ -76,7 +80,7 @@ function makeGraph() {
         .xAxisLabel('team')
         .yAxis().ticks(6);
 
-    var total_shots = name_dim.group().reduceSum(dc.pluck('shots'));
+    var total_shots = name_dim.group().reduceSum(dc.pluck(statTwo));
 
     dc.barChart('#graphTwo')
         .width(900)

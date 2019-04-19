@@ -26,17 +26,17 @@
     <main>
         <h1>nhl stats</h1>
         <form>
-            <select name="teams" id="teamsOne">
-                <option value="0">New Jersey</option>
-                <option value="1">New York Islanders</option>
-                <option value="2">New York Rangers</option>
-                <option value="3">Philadelphia Flyers</option>
+            <select name="teams" id="statsOne" onchange="makeGraph()">
+                <option value="goals">Goals</option>
+                <option value="shootingPctg">Shooting Percentage</option>
+                <option value="ptPctg">Points Percentage</option>
+                <option value="shots">Shots</option>
             </select>
-            <select name="teamsTwo" id="teamsTwo">
-                <option value="0">New Jersey</option>
-                <option value="1">New York Islanders</option>
-                <option value="2">New York Rangers</option>
-                <option value="3">Philadelphia Flyers</option>
+            <select name="teamsTwo" id="statsTwo" onchange="makeGraph()">
+                <option value="goals"></option>
+                <option value="shootingPctg">Shooting Percentage</option>
+                <option value="ptPctg">Points Percentage</option>
+                <option value="shots">Shots</option>
             </select>
         </form>
 
