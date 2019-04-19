@@ -1,4 +1,27 @@
 /*all styles to be moved to sass after chart production*/
+* {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.selection-container {
+    text-align: center;
+    margin: 1.2rem;
+}
+
+.selection-container select {
+    margin: 0 1.1rem;
+    padding: .3rem;
+    border: 1px solid black;
+    border-radius: 36px;
+}
+
+.selection-container p {
+    display: inline;
+}
 
 .dc-chart .box text, .dc-chart g.axis.x text{
     transform: rotate(45deg);

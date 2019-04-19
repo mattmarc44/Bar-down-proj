@@ -26,24 +26,31 @@
 <body>
     <main>
         <h1>nhl stats</h1>
-        <form>
-            <select name="teams" id="statsOne" onchange="makeGraph()">
-                <option value="goals">Goals</option>
-                <option value="shooting Pctg">Shooting Percentage</option>
-                <option value="point Pctg">Points Percentage</option>
-                <option value="shots">Shots</option>
-            </select>
-            <select name="teamsTwo" id="statsTwo" onchange="makeGraph()">
-                <option value="goals"></option>
-                <option value="shooting Pctg">Shooting Percentage</option>
-                <option value="point Pctg">Points Percentage</option>
-                <option value="shots">Shots</option>
-            </select>
-        </form>
+        <div class="selection-container">
+            <form>
+                <select name="teams" id="statsOne" onchange="makeGraph()">
+                    <option value="goals">Goals</option>
+                    <option value="shooting Pctg">Shooting Percentage</option>
+                    <option value="point Pctg">Points Percentage</option>
+                    <option value="shots">Shots</option>
+                </select>
 
-        <div id="graphOne">
+                <p>Vs</p>
+
+                <select name="teamsTwo" id="statsTwo" onchange="makeGraph()">
+                    <option value="goals">Goals</option>
+                    <option value="shooting Pctg" selected>Shooting Percentage</option>
+                    <option value="point Pctg">Points Percentage</option>
+                    <option value="shots">Shots</option>
+                </select>
+            </form>
         </div>
-        <div id="graphTwo">
+
+        <div class="graph-continer">
+            <div id="graphOne">
+            </div>
+            <div id="graphTwo">
+            </div>
         </div>
     </main>
     <script type="text/javascript" src="./assets/js/groupingData.js"></script>
