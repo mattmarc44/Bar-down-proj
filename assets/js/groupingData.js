@@ -23,12 +23,17 @@ function getData(cb) {
 
 //this is our object constructor which we'll push to our groupedData array later
 function teamObjectMaker(data, i) {
+    var dataPath = data.teams[i].teamStats[0].splits[0].stat;
+
     response = {};
     response['teamName'] = data.teams[i].name;
-    response['shots'] = data.teams[i].teamStats[0].splits[0].stat.shotsPerGame;
-    response['goals'] = data.teams[i].teamStats[0].splits[0].stat.goalsPerGame;
-    response['point Pctg'] = data.teams[i].teamStats[0].splits[0].stat.ptPctg;
-    response['shooting Pctg'] = data.teams[i].teamStats[0].splits[0].stat.shootingPctg;
+    response['shots'] = dataPath.shotsPerGame;
+    response['goals'] = dataPath.goalsPerGame;
+    response['point Pctg'] = dataPath.ptPctg;
+    response['shooting Pctg'] = dataPath.shootingPctg;
+    response['wins'] = dataPath.wins;
+    response['losses'] = dataPath.losses;
+    response['otl'] = dataPath.ot;
     return response;
 }
 
@@ -49,6 +54,7 @@ function writeDoc() {
         makeDataSet(data);
         console.log(groupedData);
         makeGraph();
+        makePieGraph();
     });
 }
 
@@ -95,6 +101,49 @@ function makeGraph() {
         .xAxisLabel('team')
         .yAxisLabel(statTwo)
         .yAxis().ticks(6);
+
+    dc.renderAll();
+}
+
+function makePieGraph() {
+    //get team for pie chart
+    var pickedTeam = document.getElementById('team-picker').value;
+
+    //reorg dataset for diferent layout in pie
+    var dataSet = [];
+
+    //construct a new object so the dc piechart will display wins, losses and otl
+    function newDataSet(title, amount) {
+        response = {};
+
+        response['title'] = title;
+        response['amount'] = amount;
+        return response;
+    }
+
+    //each time makeGrpah is called we'll be able to update the dataset for that team
+    var win = new newDataSet('Wins', groupedData[pickedTeam].wins);
+    var loss = new newDataSet('Losses', groupedData[pickedTeam].losses);
+    var otLoss = new newDataSet('otl', groupedData[pickedTeam].otl);
+
+    //put the new objects into the new dataset
+    dataSet.push(win);
+    dataSet.push(loss);
+    dataSet.push(otLoss);
+    console.log(dataSet);
+
+    var ndx = crossfilter(dataSet);
+
+    var title_dim = ndx.dimension(dc.pluck('title'));
+    var amount_group = title_dim.group().reduceSum(dc.pluck('amount'));
+
+    dc.pieChart("#graphThree")
+        .width(400)
+        .height(400)
+        .dimension(title_dim)
+        .group(amount_group)
+        .transitionDuration(600)
+        .legend(dc.legend().x(0).y(0));
 
     dc.renderAll();
 }

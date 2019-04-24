@@ -46,11 +46,53 @@
             </form>
         </div>
 
-        <div class="graph-continer">
+        <div class="graph-container">
             <div id="graphOne">
             </div>
             <div id="graphTwo">
             </div>
+        </div>
+
+        <div class="selection-container">
+                <h2>wins, losses and overtime losses</h2>
+                <form>
+                    <select name="team-picker" id="team-picker" onchange="makePieGraph()">
+                        <option value="0">New Jersey Devils</option>
+                        <option value="1">New York Islanders</option>
+                        <option value="2">New York Rangers</option>
+                        <option value="3">Philedelphia Flyers</option>
+                        <option value="4">Pittsburgh Penguins</option>
+                        <option value="5">Boston Bruins</option>
+                        <option value="6">Buffalo Sabres</option>
+                        <option value="7">Montreal Canadiens</option>
+                        <option value="8">Ottawa Senators</option>
+                        <option value="9">Toronto Maple Leafs</option>
+                        <option value="10">Carolina Hurricanes</option>
+                        <option value="11">Florida Panthers</option>
+                        <option value="12">Tampa Bay Lightning</option>
+                        <option value="13">Washington Capitals</option>
+                        <option value="14">Chicago Blackhawks</option>
+                        <option value="15">Detroit Red Wings</option>
+                        <option value="16">Nashville Predators</option>
+                        <option value="17">St. Louis Blues</option>
+                        <option value="18">Calgary Flames</option>
+                        <option value="19">Colorado Avalanche</option>
+                        <option value="20">Edmonton Oilers</option>
+                        <option value="21">Vancouver Canucks</option>
+                        <option value="22">Anaheim Ducks</option>
+                        <option value="23">Dallas Stars</option>
+                        <option value="24">Los Angeles Kings</option>
+                        <option value="25">San Jose Sharks</option>
+                        <option value="26">Columbus Blue Jackets</option>
+                        <option value="27">Minnesota Wild</option>
+                        <option value="28">Winnipeg Jets</option>
+                        <option value="29">Arizona Coyotes</option>
+                        <option value="30">Las Vegas Knights</option>
+                    </select>
+                </form>
+            </div>
+        <div class="graph-container">
+            <div id="graphThree"></div>
         </div>
     </main>
     <script type="text/javascript" src="./assets/js/groupingData.js"></script>

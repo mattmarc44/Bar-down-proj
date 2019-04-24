@@ -3,8 +3,13 @@
     margin: 0;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
+}
+
+h2 {
+    font-size: 1.6rem;
+    padding: 1.6rem 0 0 0;
 }
 
 .selection-container {
@@ -13,7 +18,7 @@ h1 {
 }
 
 .selection-container select {
-    margin: 0 1.1rem;
+    margin: 1.1rem;
     padding: .3rem;
     border: 1px solid black;
     border-radius: 36px;
@@ -21,6 +26,30 @@ h1 {
 
 .selection-container p {
     display: inline;
+}
+
+.graph-container {
+    text-align: center;
+}
+
+#graphOne, #graphTwo {
+    display: inline-block;
+    width: 100%;
+    background-color: grey;
+}
+
+#graphThree {
+    display: inline-block;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.dc-legend-item text {
+    fill: gainsboro;
+}
+
+.dc-chart .pie-slice {
+    fill: #000000;
 }
 
 .dc-chart .box text, .dc-chart g.axis.x text{
