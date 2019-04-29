@@ -25,37 +25,23 @@
 
 <body>
     <main>
-        <h1>nhl stats</h1>
-        <div class="selection-container">
+        <div class="welcome-container">
+            <div class="main-title">
+                <h1>Bar Down Stats</h1>
+            </div>
+            <div class="welcome">
+                <p>Bar Down is the best way to score, everyone knows that! But its also the best way to visualise all
+                    your favourite NHL teams
+                    stats and figures. The data is updated throuhout the regular season straight from the NHL themselves
+                    so you know you've always
+                    got the latest figures.
+                </p>
+                <a href="#selection-container" class="button">Get Started!</a>
+            </div>
+        </div>
+
+        <div class="selection-container " id="selection-container">
             <form>
-                <select name="teams" id="statsOne" onchange="makeGraph()">
-                    <option value="goals">Goals</option>
-                    <option value="shooting Pctg">Shooting Percentage</option>
-                    <option value="point Pctg">Points Percentage</option>
-                    <option value="shots">Shots</option>
-                </select>
-
-                <p>Vs</p>
-
-                <select name="teamsTwo" id="statsTwo" onchange="makeGraph()">
-                    <option value="goals">Goals</option>
-                    <option value="shooting Pctg" selected>Shooting Percentage</option>
-                    <option value="point Pctg">Points Percentage</option>
-                    <option value="shots">Shots</option>
-                </select>
-            </form>
-        </div>
-
-        <div class="graph-container">
-            <div id="graphOne">
-            </div>
-            <div id="graphTwo">
-            </div>
-        </div>
-
-        <div class="selection-container">
-                <h2>wins, losses and overtime losses</h2>
-                <form>
                     <select name="team-picker" id="team-picker" onchange="makePieGraph()">
                         <option value="0">New Jersey Devils</option>
                         <option value="1">New York Islanders</option>
@@ -90,10 +76,41 @@
                         <option value="30">Las Vegas Knights</option>
                     </select>
                 </form>
-            </div>
-        <div class="graph-container">
-            <div id="graphThree"></div>
+            <form>
+                <select name="teams" id="statsOne" onchange="makeGraph()">
+                    <option value="goals">Goals</option>
+                    <option value="shootingPctg">Shooting Percentage</option>
+                    <option value="pointPctg">Points Percentage</option>
+                    <option value="shots">Shots</option>
+                </select>
+
+                <p>Vs</p>
+
+                <select name="teamsTwo" id="statsTwo" onchange="makeGraph()">
+                    <option value="goals">Goals</option>
+                    <option value="shootingPctg" selected>Shooting Percentage</option>
+                    <option value="pointPctg">Points Percentage</option>
+                    <option value="shots">Shots</option>
+                </select>
+            </form>
         </div>
+
+        <div class="graph-container">
+                <div id="graphOne"></div>
+                <div id="graphTwo"></div>
+        </div>
+
+        <div class="selection-container">
+            <div>
+                <h2>wins, losses and overtime losses</h2>
+                
+            </div>
+            <div class="graph-container">
+                <div id="graphThree"></div>
+            </div>
+        </div>
+
+
     </main>
     <script type="text/javascript" src="./assets/js/groupingData.js"></script>
 

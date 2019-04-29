@@ -29,8 +29,8 @@ function teamObjectMaker(data, i) {
     response['teamName'] = data.teams[i].name;
     response['shots'] = dataPath.shotsPerGame;
     response['goals'] = dataPath.goalsPerGame;
-    response['point Pctg'] = dataPath.ptPctg;
-    response['shooting Pctg'] = dataPath.shootingPctg;
+    response['pointPctg'] = dataPath.ptPctg;
+    response['shootingPctg'] = dataPath.shootingPctg;
     response['wins'] = dataPath.wins;
     response['losses'] = dataPath.losses;
     response['otl'] = dataPath.ot;

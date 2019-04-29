@@ -1,6 +1,7 @@
 /*all styles to be moved to sass after chart production*/
 * {
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 h1, h2 {
@@ -15,6 +16,10 @@ h2 {
 .selection-container {
     text-align: center;
     margin: 1.2rem;
+}
+
+.selection-container form {
+    height: 20vh;
 }
 
 .selection-container select {
@@ -55,4 +60,57 @@ h2 {
 .dc-chart .box text, .dc-chart g.axis.x text{
     transform: rotate(45deg);
     text-anchor: start !important;
+}
+
+
+
+/*welcome*/
+/*Photo by Chris Liverani on Unsplash*/
+
+.welcome-container {
+    background-image: url(../img/posts.jpg);
+    height: 100vh; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-title h1 {
+    background-color: #e5f0fc98;
+    color: black;
+    width:50%;
+    box-shadow: 0 0 15px 10px #e5f0fc98;
+    border-bottom-right-radius: 25px;
+    padding: 2rem 0;
+}
+
+.welcome p {
+    background-color: #e5f0fc98;
+    color: black;
+    width: 40%;
+    box-shadow: 0 0 15px 10px #e5f0fc98;
+    box-sizing: border-box;
+    padding: 14px;
+    padding-left: 3rem;
+    position: relative;
+    top: 1rem;
+}
+
+.welcome .button{
+    background-color: transparent;
+    color: black;
+    font-size: 25px;
+    width: 40%;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    position: relative;
+    left: 10rem;
+    top: 8rem;
+    text-decoration: none;
+    transition: all .6s;
+}
+
+.welcome .button:hover {
+    background-color: #e5f0fc98;
 }
