@@ -47,6 +47,8 @@ function makeDataSet(data) {
     }
 }
 
+//variables for table
+    var table = document.getElementById('table');
 
 //kicks everything off
 function writeDoc() {
@@ -55,12 +57,14 @@ function writeDoc() {
         console.log(groupedData);
         makeGraph();
         makePieGraph();
+
+        var tableData = Object.keys(groupedData[0]);
+        makeTable(table, groupedData);
+        makeTableHead(table, tableData);
     });
 }
 
 writeDoc();
-
-console.log(groupedData);
 
 
 //time to make a graph
@@ -108,11 +112,10 @@ function makeGraph() {
 function makePieGraph() {
     //get team for pie chart
     var pickedTeam = document.getElementById('team-picker').value;
-
-    //reorg dataset for diferent layout in pie
+    // reorg dataset for diferent layout in pie
     var dataSet = [];
 
-    //construct a new object so the dc piechart will display wins, losses and otl
+    // construct a new object so the dc piechart will display wins, losses and otl
     function newDataSet(title, amount) {
         response = {};
 
@@ -147,3 +150,27 @@ function makePieGraph() {
 
     dc.renderAll();
 }
+
+function makeTableHead(table, data) {
+    var thead = table.createTHead();
+    var row = thead.insertRow();
+
+    //iterate through key values in groupedData to make a tableheader in each
+    for (let key of data) {
+        var th = document.createElement("th");
+        var text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function makeTable(table, data) {
+    for (let el of data) {
+      let row = table.insertRow();
+      for (key in el) {
+        let cell = row.insertCell();
+        let text = document.createTextNode(el[key]);
+        cell.appendChild(text);
+      }
+    }
+  }

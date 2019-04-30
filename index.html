@@ -42,6 +42,7 @@
 
         <div class="selection-container " id="selection-container">
             <form>
+                <label for="team-picker">Team:</label>
                     <select name="team-picker" id="team-picker" onchange="makePieGraph()">
                         <option value="0">New Jersey Devils</option>
                         <option value="1">New York Islanders</option>
@@ -77,6 +78,7 @@
                     </select>
                 </form>
             <form>
+                <label for="teams/teamsTwo">Compare:</label>
                 <select name="teams" id="statsOne" onchange="makeGraph()">
                     <option value="goals">Goals</option>
                     <option value="shootingPctg">Shooting Percentage</option>
@@ -107,6 +109,9 @@
             </div>
             <div class="graph-container">
                 <div id="graphThree"></div>
+                <div id="table-container">
+                    <table id="table"></table>
+                </div>
             </div>
         </div>
 

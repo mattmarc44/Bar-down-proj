@@ -15,11 +15,9 @@ h2 {
 
 .selection-container {
     text-align: center;
-    margin: 1.2rem;
-}
-
-.selection-container form {
-    height: 20vh;
+    width:100%;
+    height: 25vh;
+    padding-top: 1rem;
 }
 
 .selection-container select {
@@ -62,6 +60,10 @@ h2 {
     text-anchor: start !important;
 }
 
+div.dc-chart {
+    padding: 2rem 1.2rem;
+}
+
 
 
 /*welcome*/
@@ -82,6 +84,7 @@ h2 {
     box-shadow: 0 0 15px 10px #e5f0fc98;
     border-bottom-right-radius: 25px;
     padding: 2rem 0;
+    margin-bottom: 0;
 }
 
 .welcome p {
@@ -90,8 +93,7 @@ h2 {
     width: 40%;
     box-shadow: 0 0 15px 10px #e5f0fc98;
     box-sizing: border-box;
-    padding: 14px;
-    padding-left: 3rem;
+    padding: .9rem 2rem .9rem 3rem;
     position: relative;
     top: 1rem;
 }
@@ -106,11 +108,38 @@ h2 {
     border-radius: 15px;
     position: relative;
     left: 10rem;
-    top: 8rem;
+    top: 6rem;
     text-decoration: none;
     transition: all .6s;
 }
 
 .welcome .button:hover {
     background-color: #e5f0fc98;
+}
+
+/*table*/
+#table {
+    width: 100%;
+}
+
+table, th, td {
+}
+
+th {
+    background-color: rgb(49, 130, 189);
+    color: rgb(43, 43, 43);
+    padding: 1.2rem .5rem;
+}
+
+td {
+    background-color: rgb(158, 202, 225);
+    color: #2b3e50;
+}
+
+td:nth-child(1){
+    background-color: rgb(107, 174, 214);
+}
+
+td:last-child, th:last-child {
+    padding-right: 35px;
 }
