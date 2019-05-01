@@ -4,6 +4,10 @@
     scroll-behavior: smooth;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 h1, h2 {
     text-align: center;
 }
@@ -108,7 +112,7 @@ div.dc-chart {
     border: 2px solid black;
     border-radius: 15px;
     position: relative;
-    left: 10rem;
+    left: 16rem;
     top: 6rem;
     text-decoration: none;
     transition: all .6s;
@@ -119,6 +123,10 @@ div.dc-chart {
 }
 
 /*table*/
+#table-container {
+    clear: both;
+}
+
 #table {
     width: 100%;
 }
@@ -143,6 +151,11 @@ td:nth-child(1){
 
 td:last-child, th:last-child {
     padding-right: 35px;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: 0px;  
 }
 
 
@@ -176,8 +189,16 @@ td:last-child, th:last-child {
         width: 100%;
     }
 
+    #graphOne, #graphTwo {
+        overflow-x: scroll;
+    }
+
     #graphOne svg, #graphTwo svg {
         background-color: grey;
+    }
+
+    #graphThree {
+        overflow-x: scroll;
     }
 
     #graphThree svg {
@@ -186,5 +207,33 @@ td:last-child, th:last-child {
 
     div.dc-chart {
         padding: 0 1.2rem;
+    }
+
+    #table-container {
+        overflow-x: scroll;
+    }
+}
+
+/*tablets*/
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+    .welcome .button {
+        left: 17rem;
+        top: 20rem;
+        padding: 32px 50px;
+    }
+
+    .welcome p {
+        width: 50%;
+        top: 10rem;
+        font-size: 1.2rem;
+    }
+
+    .main-title h1 {
+        width: 60%;
+        font-size: 3rem;
+    }
+
+    #graphOne, #graphTwo {
+        overflow-x: scroll;
     }
 }
