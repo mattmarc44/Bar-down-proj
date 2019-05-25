@@ -12,15 +12,12 @@
     <!--styling-->
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
-    <link rel="stylesheet" href="./assets/css/temp.css">
-    <!--JQuery-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <!--d3-->
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!--d3 dependencies-->
     <script type="text/javascript" src="./assets/js/d3.min.js"></script>
     <script type="text/javascript" src="./assets/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="./assets/js/dc.js"></script>
-    <script type="text/javascript" src="./assets/js/queue.min.js"></script>
 </head>
 
 <body>
@@ -78,7 +75,7 @@
                     </select>
                 </form>
             <form>
-                <label for="teams/teamsTwo">Compare:</label>
+                <label for="statsOne">Compare:</label>
                 <select name="teams" id="statsOne" onchange="makeGraph()">
                     <option value="goals">Goals</option>
                     <option value="shootingPctg">Shooting Percentage</option>

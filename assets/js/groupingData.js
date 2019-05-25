@@ -54,7 +54,6 @@ function makeDataSet(data) {
 function writeDoc() {
     getData(function (data) {
         makeDataSet(data);
-        console.log(groupedData);
         makeGraph();
         makePieGraph();
 
@@ -149,6 +148,7 @@ function makePieGraph() {
         .legend(dc.legend().x(0).y(0));
 
     dc.renderAll();
+
 }
 
 function makeTableHead(table, data) {
