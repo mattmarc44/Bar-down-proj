@@ -4,7 +4,7 @@ This will be a data dashboard for all NHL teams with the aim being an SPA for a 
 
 I aim to start with a landing page with a short discription of the site and then directing users to the main content. From here there will be options to manipulate any graphs based off a few options. 
 
-Finished site on Github Pages: https://mattmarc44.github.io/Bar-Down-Proj/
+Finished site on Github Pages: https://mattmarc44.github.io/Bar-down-proj/
 
 ## UX
  
@@ -106,6 +106,9 @@ As a user I want to view all stats in a traditional tabular way.
     2. rerun previous tests on sizes mobile/tablet.
     3. rerun tests from deployed gh page.
     4. html/css validator.
+    
+5. Automated testing:
+    - I attempted to use jasmine TDD but due to the lack of resources on code institute and elsewhere. At my level of experience I felt everything that needed testing was too complicated for the beginner level.For reference I have left the enviroment in the files.
 
 
 mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
