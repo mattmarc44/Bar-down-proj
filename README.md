@@ -110,6 +110,12 @@ As a user I want to view all stats in a traditional tabular way.
 5. Automated testing:
     - I attempted to use jasmine TDD but due to the lack of resources on code institute and elsewhere. At my level of experience I felt most that needed testing was too complicated for the beginner level.For reference I have left the enviroment in the files.
 
+6. manual testing:
+    - Mainly I tested my functions line by line using console.log() in diferent lines making sure expected outcomes are repeated under diferent circumstances.
+
+7. deployed testing:
+    - Famil and friends accessed the deployed site on github pages and gave me feedback from several screen sizes, devices and web browsers.
+
 
 mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
@@ -125,13 +131,7 @@ I decided to use github pages to deploy this project as suggested and taught via
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
-
-- The text for aboout.html was copied from the [Wikipedia article The Monkees](https://en.wikipedia.org/wiki/The_Monkees)
-
-- Some formatting code for the footer sections was inspired by [How to keep your footer where it belongs](https://medium.freecodecamp.org/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c)
-
-- The song facts were copied from [song facts.com] (https://www.songfacts.com/facts/the-monkees/songname)
+- The data from the graphs is collected from [NHL](https://statsapi.web.nhl.com//api/v1/teams?expand=team.stats)(https://github.com/dword4/nhlapi)
 
 ### Media
 The photos used in this site were obtained from:
