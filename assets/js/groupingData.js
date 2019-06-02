@@ -47,8 +47,11 @@ function makeDataSet(data) {
     }
 }
 
-//variables for table
+//indented two lines must be commented out for testing
+    //variables for table
     var table = document.getElementById('table');
+
+    writeDoc();
 
 //kicks everything off
 function writeDoc() {
@@ -62,9 +65,6 @@ function writeDoc() {
         makeTableHead(table, tableData);
     });
 }
-
-writeDoc();
-
 
 //time to make a graph
 function makeGraph() {
