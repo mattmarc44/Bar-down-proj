@@ -4,7 +4,7 @@ This will be a data dashboard for all NHL teams with the aim being an SPA for a 
 
 I aim to start with a landing page with a short discription of the site and then directing users to the main content. From here there will be options to manipulate any graphs based off a few options. 
 
-Finished site on Github Pages: https://mattmarc44.github.io/Bar-Down-Proj/
+Finished site on Github Pages: https://mattmarc44.github.io/Bar-down-proj/
 
 ## UX
  
@@ -106,6 +106,9 @@ As a user I want to view all stats in a traditional tabular way.
     2. rerun previous tests on sizes mobile/tablet.
     3. rerun tests from deployed gh page.
     4. html/css validator.
+    
+5. Automated testing:
+    - I attempted to use jasmine TDD but due to the lack of resources on code institute and elsewhere. At my level of experience I felt most that needed testing was too complicated for the beginner level.For reference I have left the enviroment in the files.
 
 
 mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
@@ -119,4 +122,29 @@ mention in this section any interesting bugs or problems you discovered during y
 I decided to use github pages to deploy this project as suggested and taught via the course. Issues with deployment includes unexpected display behaviour on gh pages. Mostly fixed in media queries. Also slowing down of charts being displayed (possibly slow wifi as I couldn't recreate later).
 
 
+## Credits
 
+### Content
+- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+
+- The text for aboout.html was copied from the [Wikipedia article The Monkees](https://en.wikipedia.org/wiki/The_Monkees)
+
+- Some formatting code for the footer sections was inspired by [How to keep your footer where it belongs](https://medium.freecodecamp.org/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c)
+
+- The song facts were copied from [song facts.com] (https://www.songfacts.com/facts/the-monkees/songname)
+
+### Media
+The photos used in this site were obtained from:
+    https://www.pexels.com/
+The fonts used were from google fonts: 
+    https://fonts.google.com/
+
+### Acknowledgements
+
+I received inspiration for this project from:
+- nhl.com
+- https://econsultancy.com/beautifully-designed-web-dashboards/
+
+### Notes
+
+- some lines must be excluded from groupingData.js for testing, this I beleive is due to asyncronous and DOM elements at play. 
